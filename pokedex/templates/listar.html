@@ -1,0 +1,31 @@
+{% extends "basico.html" %}
+{% block conteudo %}
+<table class="table table-hover">
+
+    <tbody>
+    <div class="row">
+        {% for pokemon in todos_pokemons %}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <img width="180" height="150" align="center" src="{{ pokemon.imagem.url }}">
+                    <h1> {{ pokemon.nome }} </h1>
+                    <p>{{ pokemon.fk_categoria.nome }}</p>
+                    <p>{{ pokemon.fk_habilidades.nome }}</p>
+                    <p> Altura: {{ pokemon.altura }}</p>
+                    <p>Velocidade: {{ pokemon.velocidade }}</p>
+                    <p>Ataque: {{ pokemon.ataque }}</p>
+                    <p>Defesa: {{ pokemon.defesa}}</p>
+                    <p>Ponto de saude: {{ pokemon.ponto_saude }}</p>
+                    <p>Ataque especial: {{ pokemon.ataque_especial }}</p>
+                    <p>Defesa especial: {{ pokemon.defesa_especial }}</p>
+                    </tr>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </tbody>
+</table>
+{% endblock %}
+
